@@ -1,17 +1,14 @@
 ## GitLab home lab
-___
 Quick GitLab repo using docker. 
 
 - Basic understand on implementation of runners
 - Understanding how Ansible can be integrate with runners
 
 ## Requirements
-___
 - __[Docker](https://docs.docker.com/engine/install/)__
 - __[Docker Compose](https://docs.docker.com/compose/install/)__
 
 ## Clone repo
----
 Create a based directory eg; `/opt/docker` .
 
 Clone this repo
@@ -19,8 +16,6 @@ Clone this repo
 git clone https://github.com/meorkamil/gitlab.git
 ```
 ## Environment Setup
----
-Edit `volumes` and `environment` specs on `docker-compose.yml` based on your environment Win/Linux/MacOS or your needs
 ```yaml
 version: "3.8"
 
@@ -56,7 +51,6 @@ services:
       - './docker-registry/data:/data'
 ```
 ## Enable Local registry
----
 You can use the existing gitlab registry. Please [refer](https://docs.gitlab.com/ee/administration/packages/container_registry.html) GitLab Container Registry Docs.
 
 Create registry credentials
@@ -80,18 +74,14 @@ Please enable insecure registry in `daemon.json`
 Reference: https://docs.docker.com/registry/insecure/
 
 ## Start up
-___
-
 Bring up services
 ```bash
 docker-compose up -d
 ```
 
 ## Runner Registration
----
 Please refers gitlab docs: 
 https://docs.gitlab.com/runner/install/docker.html
 
 ## GitLab CI
----
 [Docs](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) -.gitlab-ci.yml
