@@ -37,6 +37,13 @@ services:
       - './logs:/var/log/gitlab'
       - './data:/var/opt/gitlab'
 
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './gitrunner/srv/gitlab-runner/config:/etc/gitlab-runner'
+
   registry:
     image: registry:2
     ports:
